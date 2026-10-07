@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #FC8019;
+  --primary-hover: #E46F0E;
+  --primary-light: #FFF0E5;
+  --primary-border: #FFD5B8;
+  
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8F9FB;
+  --bg-tertiary: #F1F2F5;
+  
+  --card-bg: #FFFFFF;
+  --card-hover-bg: #FFFFFF;
+  
+  --text-primary: #1C1C24;
+  --text-secondary: #686B78;
+  --text-muted: #93959F;
+  
+  --border-color: #E2E8F0;
+  --border-light: #F1F5F9;
+  
+  --badge-green: #24963F;
+  --badge-green-bg: #E8F5E9;
+  --badge-yellow: #DB7C00;
+  --badge-yellow-bg: #FFF8E1;
+  --veg-color: #0FB45F;
+  --non-veg-color: #E46D47;
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --shadow-orange: 0 6px 20px rgba(252, 128, 25, 0.35);
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+  
+  --header-height: 80px;
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+[data-theme='dark'] {
+  --bg-primary: #0F1117;
+  --bg-secondary: #171A23;
+  --bg-tertiary: #222634;
+  
+  --card-bg: #1A1D27;
+  --card-hover-bg: #222634;
+  
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  
+  --border-color: #2E3446;
+  --border-light: #222634;
+  
+  --primary-light: rgba(252, 128, 25, 0.12);
+  --primary-border: rgba(252, 128, 25, 0.3);
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 10px;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Buttons & Inputs resets */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+input {
+  font-family: inherit;
+  outline: none;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(252, 128, 25, 0.4); }
+  70% { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(252, 128, 25, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(252, 128, 25, 0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease forwards;
+}
+
+/* Utility Layout Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Veg / Non-Veg Indicator Icons */
+.veg-icon {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--veg-color);
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+.veg-icon::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background-color: var(--veg-color);
+  border-radius: 50%;
+}
+
+.non-veg-icon {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--non-veg-color);
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+.non-veg-icon::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 7px solid var(--non-veg-color);
+}

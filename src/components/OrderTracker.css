@@ -1,0 +1,204 @@
+.tracker-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 210;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.tracker-container {
+  background-color: var(--card-bg);
+  width: 100%;
+  max-width: 580px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tracker-header {
+  background: linear-gradient(135deg, #FC8019 0%, #FF5E00 100%);
+  color: white;
+  padding: 24px;
+  position: relative;
+}
+
+.tracker-header-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tracker-header-title h3 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.order-id-badge {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tracker-timer-box {
+  margin-top: 16px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.timer-count {
+  font-size: 26px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.tracker-body {
+  padding: 24px;
+}
+
+.map-placeholder {
+  height: 150px;
+  border-radius: var(--radius-md);
+  background: radial-gradient(circle at 50% 50%, #2A3042 0%, #151821 100%);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 24px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-pulse-dot {
+  width: 16px;
+  height: 16px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  position: absolute;
+  animation: pulseGlow 1.5s infinite;
+}
+
+.map-overlay-text {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  margin-left: 10px;
+}
+
+.timeline-list::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 11px;
+  width: 2px;
+  background-color: var(--border-color);
+}
+
+.timeline-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.step-icon-wrapper {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+.timeline-step.active .step-icon-wrapper {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #FFF;
+  box-shadow: 0 0 12px rgba(252, 128, 25, 0.5);
+}
+
+.timeline-step.completed .step-icon-wrapper {
+  background-color: var(--badge-green);
+  border-color: var(--badge-green);
+  color: #FFF;
+}
+
+.step-info h5 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.step-info p {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.driver-card {
+  margin-top: 24px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--border-color);
+}
+
+.driver-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.driver-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.call-driver-btn {
+  background-color: var(--badge-green-bg);
+  color: var(--badge-green);
+  border: 1px solid var(--badge-green);
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
